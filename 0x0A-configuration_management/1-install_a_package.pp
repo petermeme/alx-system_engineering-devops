@@ -1,6 +1,6 @@
-#!/usr/bin/pup
-# install_a_package.pp
-package {'flask':
-  ensure   => '2.1.0',
-  provider => 'pip3',
+#!/usr/bin/env pup
+# install a package
+package { 'flask':
+  ensure   => 'installed',
+  provider => 'pip3'
 }
