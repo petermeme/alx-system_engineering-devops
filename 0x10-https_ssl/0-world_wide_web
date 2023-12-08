@@ -18,3 +18,4 @@ domain_info () {
     fi
 }
 domain_info "$1" "$2"
+fi
