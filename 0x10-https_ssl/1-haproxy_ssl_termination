@@ -38,7 +38,7 @@ defaults
 frontend www-backend
         bind 0.0.0.0:80	
         http-request add-header X-Forwarded-Proto http
-        bind 0.0.0.0:443 ssl crt /etc/letsencrypt/live/www.amareso.tech/amareso.tech.pem
+        bind 0.0.0.0:443 ssl crt /etc/letsencrypt/live/www.amareso.tech/fullchain.pem
         http-request add-header X-Forwarded-Proto https
         acl letsencrypt-acl path_beg /.well-known/acme-challenge/
         use_backend letsencrypt-backend if letsencrypt-acl
@@ -49,4 +49,6 @@ frontend www-backend
 
 backend www-backend
     balance roundrobin
-    server 396197-web-01 54.236.49.157:80 check
+    server 396197-web-01 100.25.110.237:80 check
+    server 396197-web-02 100.25.168.161:80 check
+    

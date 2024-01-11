@@ -14,7 +14,7 @@ domain_info () {
 
     # if ($2) is not empty, then print the information about the given subdomain($2)
     else
-	dig "$2.$1" | grep -A1 'ANSWER SECTION:' | tail -n1 | awk '{split($0, DOMAIN, "."); print "The subdomain " DOMAIN[1] " is a " $4 " record and points to " $5}'
+        dig "$2.$1" | grep -A1 'ANSWER SECTION:' | tail -n1 | awk '{split($0, DOMAIN, "."); print "The subdomain " DOMAIN[1] " is a " $4 " record and points to " $5}'
     fi
 }
 domain_info "$1" "$2"
