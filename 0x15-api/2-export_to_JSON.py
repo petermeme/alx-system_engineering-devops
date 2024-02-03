@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""A REST API implementation to fetch employee info"""
 import json
 import requests
 import sys
